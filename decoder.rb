@@ -1,7 +1,7 @@
-def checkA(s)
+def check_a(_str)
   result = ''
-  s.split.each do |s|
-    result += case s
+  s.split.each do |str|
+    result += case str
               when '.-'
                 'A'
               when '-...'
@@ -64,6 +64,6 @@ end
 INPUT = '.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...'.freeze
 output = ''
 INPUT.split('   ').each do |s|
-  output += checkA(s)
+  output += check_a(s)
 end
 puts output

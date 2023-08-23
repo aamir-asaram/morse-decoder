@@ -1,69 +1,69 @@
 def checkA(s)
-  result = ""
-  s.split(" ").each do |s|
-    case s
-      when ".-"
-        result += "A"
-      when "-..."
-        result += "B"
-      when "-.-."
-        result += "C"
-      when "-.."
-        result += "D"
-      when "."
-        result += "E"
-      when "..-."
-        result += "F"
-      when "--."
-        result += "G"
-      when "...."
-        result += "H"
-      when ".."
-        result += "I"
-      when ".---"
-        result += "J"
-      when "-.-"
-        result += "K"
-      when ".-.."
-        result += "L"
-      when "--"
-        result += "M"
-      when "-."
-        result += "N"
-      when "---"
-        result += "O"
-      when ".--."
-        result += "P"
-      when "--.-"
-        result += "Q"
-      when ".-."
-        result += "R"
-      when "..."
-        result += "S"
-      when "-"
-        result += "T"
-      when "..-"
-        result += "U"
-      when "...-"
-        result += "V"
-      when ".--"
-        result += "W"
-      when "-..-"
-        result += "X"
-      when "-.--"
-        result += "Y"
-      when "--.."
-        result += "Z"
-      else
-        result += " "
-    end
+  result = ''
+  s.split.each do |s|
+    result += case s
+              when '.-'
+                'A'
+              when '-...'
+                'B'
+              when '-.-.'
+                'C'
+              when '-..'
+                'D'
+              when '.'
+                'E'
+              when '..-.'
+                'F'
+              when '--.'
+                'G'
+              when '....'
+                'H'
+              when '..'
+                'I'
+              when '.---'
+                'J'
+              when '-.-'
+                'K'
+              when '.-..'
+                'L'
+              when '--'
+                'M'
+              when '-.'
+                'N'
+              when '---'
+                'O'
+              when '.--.'
+                'P'
+              when '--.-'
+                'Q'
+              when '.-.'
+                'R'
+              when '...'
+                'S'
+              when '-'
+                'T'
+              when '..-'
+                'U'
+              when '...-'
+                'V'
+              when '.--'
+                'W'
+              when '-..-'
+                'X'
+              when '-.--'
+                'Y'
+              when '--..'
+                'Z'
+              else
+                ' '
+              end
   end
-  return result + " "
+  "#{result} "
 end
 
-INPUT = ".-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ..."
-output = ""
-INPUT.split("   ").each do |s|
+INPUT = '.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...'.freeze
+output = ''
+INPUT.split('   ').each do |s|
   output += checkA(s)
 end
 puts output

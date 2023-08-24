@@ -79,7 +79,7 @@ Install this project with:
 👤 **Aamir Asaram**
 
 - GitHub: [@aamir-asaram](https://github.com/aamir-asaram)
-- Twitter: [@aaaaamir\_\_](https://twitter.com/aaaaamir__)
+- Twitter: [@aaaaamir_](https://twitter.com/aaaaamir_)
 - LinkedIn: [Aamir Asaram](https://www.linkedin.com/in/aamir-asaram/)
 
 👤 Youssef OUBARI

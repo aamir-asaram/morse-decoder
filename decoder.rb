@@ -27,7 +27,6 @@ MORSE_CODE = {
   '--..' => 'Z'
 }.freeze
 
-
 def split_word(string)
   string.split
 end

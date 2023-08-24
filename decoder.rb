@@ -36,7 +36,7 @@ def decode_word(word)
   word.split.each do |c|
     result += decode_character(c)
   end
-  "#{result}"
+  result
 end
 
 def decode(string)

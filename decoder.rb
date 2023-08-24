@@ -28,16 +28,16 @@ MORSE_CODE = {
 }.freeze
 
 
-def split_word(s)
-  return s.split(' ')
+def split_word(string)
+  string.split
 end
 
-def decode(s)
+def decode(string)
   word = ''
-  split_word(s).each do |c|
+  split_word(string).each do |c|
     word += MORSE_CODE[c]
   end
-  return word + ' '
+  "#{word} "
 end
 
 INPUT = '.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...'.freeze

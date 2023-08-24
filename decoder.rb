@@ -1,69 +1,48 @@
-def check_a(_str)
-  result = ''
-  s.split.each do |str|
-    result += case str
-              when '.-'
-                'A'
-              when '-...'
-                'B'
-              when '-.-.'
-                'C'
-              when '-..'
-                'D'
-              when '.'
-                'E'
-              when '..-.'
-                'F'
-              when '--.'
-                'G'
-              when '....'
-                'H'
-              when '..'
-                'I'
-              when '.---'
-                'J'
-              when '-.-'
-                'K'
-              when '.-..'
-                'L'
-              when '--'
-                'M'
-              when '-.'
-                'N'
-              when '---'
-                'O'
-              when '.--.'
-                'P'
-              when '--.-'
-                'Q'
-              when '.-.'
-                'R'
-              when '...'
-                'S'
-              when '-'
-                'T'
-              when '..-'
-                'U'
-              when '...-'
-                'V'
-              when '.--'
-                'W'
-              when '-..-'
-                'X'
-              when '-.--'
-                'Y'
-              when '--..'
-                'Z'
-              else
-                ' '
-              end
+MORSE_CODE = {
+  '.-' => 'A',
+  '-...' => 'B',
+  '-.-.' => 'C',
+  '-..' => 'D',
+  '.' => 'E',
+  '..-.' => 'F',
+  '--.' => 'G',
+  '....' => 'H',
+  '..' => 'I',
+  '.---' => 'J',
+  '-.-' => 'K',
+  '.-..' => 'L',
+  '--' => 'M',
+  '-.' => 'N',
+  '---' => 'O',
+  '.--.' => 'P',
+  '--.-' => 'Q',
+  '.-.' => 'R',
+  '...' => 'S',
+  '-' => 'T',
+  '..-' => 'U',
+  '...-' => 'V',
+  '.--' => 'W',
+  '-..-' => 'X',
+  '-.--' => 'Y',
+  '--..' => 'Z'
+}.freeze
+
+
+def split_word(s)
+  return s.split(' ')
+end
+
+def decode(s)
+  word = ''
+  split_word(s).each do |c|
+    word += MORSE_CODE[c]
   end
-  "#{result} "
+  return word + ' '
 end
 
 INPUT = '.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...'.freeze
 output = ''
 INPUT.split('   ').each do |s|
-  output += check_a(s)
+  output += decode(s)
 end
 puts output

@@ -27,21 +27,25 @@ MORSE_CODE = {
   '--..' => 'Z'
 }.freeze
 
-def split_word(string)
-  string.split
+def decode_character(char)
+  MORSE_CODE[char]
+end
+
+def decode_word(word)
+  result = ''
+  word.split.each do |c|
+    result += decode_character(c)
+  end
+  "#{result}"
 end
 
 def decode(string)
-  word = ''
-  split_word(string).each do |c|
-    word += MORSE_CODE[c]
+  result = ''
+  string.split('   ').each do |w|
+    result += "#{decode_word(w)} "
   end
-  "#{word} "
+  result
 end
 
 INPUT = '.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...'.freeze
-output = ''
-INPUT.split('   ').each do |s|
-  output += decode(s)
-end
-puts output
+puts decode(INPUT)
